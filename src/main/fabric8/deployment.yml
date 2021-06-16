@@ -32,7 +32,7 @@ spec:
             timeoutSeconds: 3
           env:
             - name: SPRING_DATA_MONGODB_URI
-              value: mongodb://${SPRING_DATA_MONGODB_USER}:${SPRING_DATA_MONGODB_PASSWORD}@mongodb/sampledb
+              value: mongodb://${SPRING_DATA_MONGODB_USER}:${SPRING_DATA_MONGODB_PASSWORD}@${SPRING_DATA_MONGODB_SERVICE}/${SPRING_DATA_MONGODB_DATABASE}
             - name: SPRING_DATA_MONGODB_USER
               valueFrom:
                 secretKeyRef:
@@ -44,4 +44,14 @@ spec:
                   key: database-password
                   name: mongodb
 
+            - name: SPRING_DATA_MONGODB_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  key: database-name
+                  name: mongodb
           
+            - name: SPRING_DATA_MONGODB_SERVICE
+              valueFrom:
+                secretKeyRef:
+                  key: database-service
+                  name: mongodb
