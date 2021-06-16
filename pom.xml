@@ -28,11 +28,11 @@
     <openshift-client.version>3.1.8</openshift-client.version>
     <rest-assured.version>3.1.0</rest-assured.version>
 
-    <!--
+    
     <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:${openjdk18-openshift.version}</fabric8.generator.from>
     <fabric8.generator.from>registry.redhat.io/redhat-openjdk18-openshift:${openjdk18-openshift.version}</fabric8.generator.from>
     <fabric8.generator.fromMode>docker</fabric8.generator.fromMode>
-    -->
+    
     <fabric8.mode>openshift</fabric8.mode>
     <fabric8.generator.from>openshift/redhat-openjdk18-openshift:${openjdk18-openshift.version}</fabric8.generator.from>
     <fabric8.generator.fromMode>istag</fabric8.generator.fromMode>
